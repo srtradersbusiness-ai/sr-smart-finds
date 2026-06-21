@@ -42,7 +42,7 @@ export default async function Home() {
   const products = await getProducts();
 
   // Get unique categories for filtering
-  const categories = ["All", ...new Set(products.map((p) => p.category))];
+  const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
 
   return (
     <main>
